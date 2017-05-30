@@ -1,16 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace LeetSpeakTranslator
+namespace LeetSpeakTranslatorProject.Objects
 {
   public class LeetSpeakTranslator
   {
     private static List<char> _letters = new List<char>{};
 
-    public static void DeleteAll()
-    {
-      _letters.Clear();
-    }
     public string Translate(string test)
     {
       char [] testArray = test.ToCharArray();
@@ -41,6 +37,10 @@ namespace LeetSpeakTranslator
 
       string result = String.Join("", _letters.ToArray());
       return result;
+    }
+    public static void DeleteAll()
+    {
+      _letters.Clear();
     }
   }
 }

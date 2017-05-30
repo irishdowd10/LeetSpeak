@@ -1,8 +1,9 @@
 using Xunit;
 using System;
 using System.Collections.Generic;
+using LeetSpeakTranslatorProject.Objects;
 
-namespace LeetSpeakTranslator
+namespace LeetSpeakTranslatorTester
 {
   public class LeetSpeakTranslatorTest : IDisposable
   {
