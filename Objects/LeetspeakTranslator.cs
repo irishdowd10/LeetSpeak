@@ -5,7 +5,7 @@ namespace LeetSpeakTranslator
 {
   public class LeetSpeakTranslator
   {
-    private static List<string> _letters = new List<string>{};
+    private static List<char> _letters = new List<char>{};
 
     public static void DeleteAll()
     {
@@ -16,17 +16,27 @@ namespace LeetSpeakTranslator
       char [] testArray = test.ToCharArray();
       for (int i = 0; i < testArray.Length; i++)
       {
-        string newLetter = testArray[i].ToString();
-        if (newLetter == "e")
+        if (testArray[i] == 'e' || testArray[i] == 'E')
         {
-          newLetter = "3";
+          testArray[i] = '3';
         }
-        if (newLetter == "o")
+        if (testArray[i] == 'o' || testArray[i] == 'O')
         {
-          newLetter = "0";
+          testArray[i] = '0';
         }
-        Console.WriteLine(newLetter);
-        _letters.Add(newLetter);
+        if (testArray[i] == 'I')
+        {
+          testArray[i] = '1';
+        }
+        if (testArray[i] == 't' || testArray[i] == 'T')
+        {
+          testArray[i] = '7';
+        }
+        if (testArray[i] == 's'  || testArray[i] == 'S'  && testArray[i - 1] != ' ')
+        {
+          testArray[i] = 'z';
+        }
+        _letters.Add(testArray[i]);
       }
 
       string result = String.Join("", _letters.ToArray());
